@@ -21,7 +21,7 @@ appData = {
     timeData: time,
     saving: true,
     chooseExpenses: function () {
-        for (let i = 0; i < 2; i++){
+        for (let i = 0; i < 1; i++){
             let a = prompt("Введите обязательную статью расходов в этом месяце", ''),
                 b = prompt("Во сколько обойдется?", '');
             if ((typeof(a) === 'string') && (typeof(a) != null ) && (typeof(b) != null )
@@ -65,5 +65,7 @@ appData = {
     chooseIncome: function () {
         let items = prompt("Что принесет дополнительный доход?");
         appData.income = items.split(', ');
+        appData.income.push(prompt('Может что-то ещё?'));
+        appData.income.sort();
     }
 };
